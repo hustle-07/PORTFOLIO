@@ -3,144 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prashant | The Future</title>
-    <meta name="description" content="Personal portfolio of Prashant - AI Agent Builder and Web Prodigy">
-    
-    <!-- Fonts: Space Grotesk & Inter -->
+    <title>PRASHANT — Builder of the Future</title>
+    <meta name="description" content="Prashant — An 8th-grade coding prodigy building custom AI agents, prompt engineering systems, and premium websites.">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- GSAP & Lenis via CDN -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lenis Smooth Scroll -->
     <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="cursor-glow"></div>
-    <div class="grain"></div>
-    
-    <!-- Navbar -->
-    <nav class="navbar">
-        <a href="#" class="logo">PRASHANT<span>.</span></a>
-        <a href="mailto:HUSTLEBHAIYA@GMAIL.COM" class="btn-outline" data-cursor="hover">LET'S BUILD</a>
-    </nav>
 
-    <!-- 1. Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-bg-video-container">
-            <img src="assets/scene1.jpg" alt="The Prodigy" class="bg-cover-image">
-            <!-- <video src="assets/scene1.mp4" muted loop playsinline class="hero-video"></video> -->
-        </div>
-        
-        <div class="hero-content">
-            <h1 class="hero-title kinetic-text">
-                <span class="line"><span class="word">I</span> <span class="word">BUILD</span></span>
-                <span class="line"><span class="word">THE</span> <span class="word highlight">FUTURE.</span></span>
-            </h1>
-            <p class="hero-subtitle">
-                I'm Prashant. An 8th-grade developer building custom AI agents and premium websites.
-            </p>
-        </div>
-    </section>
-
-    <!-- 2. Animated Stats Strip -->
-    <div class="marquee-container">
-        <div class="marquee-content">
-            <span>2 YEARS OF PYTHON</span> • 
-            <span>$5K+ PROJECT VALUE</span> • 
-            <span>AI AUTOMATION EXPERT</span> • 
-            <span>VIBE CODING PRODIGY</span> • 
-            <span>2 YEARS OF PYTHON</span> • 
-            <span>$5K+ PROJECT VALUE</span> • 
-            <span>AI AUTOMATION EXPERT</span> • 
-            <span>VIBE CODING PRODIGY</span>
+    <!-- ============ PRELOADER ============ -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-counter">
+                <span id="preloader-number">0</span>
+            </div>
+            <div class="preloader-bar">
+                <div class="preloader-bar-fill" id="preloader-bar-fill"></div>
+            </div>
+            <p class="preloader-tagline">LOADING EXPERIENCE</p>
         </div>
     </div>
 
-    <!-- 3. Mission & Story Section -->
-    <section class="story">
-        <div class="container">
-            <h2 class="reveal-text">
-                Two years ago, I wrote my first line of Python. <br>
-                Today, I build custom AI agents, master prompt engineering, and deliver high-end web experiences.
+    <!-- ============ CUSTOM CURSOR ============ -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- ============ FILM GRAIN ============ -->
+    <div class="grain-overlay"></div>
+
+    <!-- ============ NAVBAR ============ -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo" data-magnetic>PRASHANT<span class="dot">.</span></a>
+            <div class="nav-links">
+                <a href="#about" data-magnetic>About</a>
+                <a href="#work" data-magnetic>Work</a>
+                <a href="#services" data-magnetic>Services</a>
+                <a href="mailto:HUSTLEBHAIYA@GMAIL.COM" class="nav-cta" data-magnetic>
+                    <span>Let's Talk</span>
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M1 11L11 1M11 1H3M11 1V9" stroke="currentColor" stroke-width="1.5"/></svg>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section id="hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>AVAILABLE FOR PROJECTS</span>
+            </div>
+            <h1 class="hero-heading">
+                <div class="line-wrap"><span class="line-inner">I BUILD</span></div>
+                <div class="line-wrap"><span class="line-inner">THE <em>FUTURE</em></span></div>
+            </h1>
+            <div class="hero-bottom">
+                <div class="hero-description">
+                    <p>An 8th-grade developer building custom AI agents, mastering prompt engineering, and delivering premium web experiences.</p>
+                </div>
+                <div class="hero-scroll-indicator">
+                    <div class="scroll-line"></div>
+                    <span>SCROLL</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image-container">
+            <div class="hero-image-mask">
+                <img src="assets/scene1.jpg" alt="Prashant" class="hero-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ MARQUEE STRIP ============ -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>PYTHON DEVELOPER</span>
+                <span class="marquee-separator">✦</span>
+                <span>AI AUTOMATION</span>
+                <span class="marquee-separator">✦</span>
+                <span>PROMPT ENGINEERING</span>
+                <span class="marquee-separator">✦</span>
+                <span>VIBE CODING</span>
+                <span class="marquee-separator">✦</span>
+                <span>WEB DEVELOPMENT</span>
+                <span class="marquee-separator">✦</span>
+                <span>$5K+ PROJECTS</span>
+                <span class="marquee-separator">✦</span>
+                <span>PYTHON DEVELOPER</span>
+                <span class="marquee-separator">✦</span>
+                <span>AI AUTOMATION</span>
+                <span class="marquee-separator">✦</span>
+                <span>PROMPT ENGINEERING</span>
+                <span class="marquee-separator">✦</span>
+                <span>VIBE CODING</span>
+                <span class="marquee-separator">✦</span>
+                <span>WEB DEVELOPMENT</span>
+                <span class="marquee-separator">✦</span>
+                <span>$5K+ PROJECTS</span>
+                <span class="marquee-separator">✦</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ ABOUT / STORY SECTION ============ -->
+    <section id="about">
+        <div class="about-inner">
+            <div class="about-label">
+                <span class="label-line"></span>
+                <span>ABOUT</span>
+            </div>
+            <h2 class="about-heading split-text">
+                Two years ago, I wrote my first line of Python. Today, I build custom AI agents, master prompt engineering, and deliver web experiences that feel like the future.
             </h2>
-        </div>
-    </section>
-
-    <!-- 4. Three Pillars Section -->
-    <section class="pillars" id="pillars">
-        <div class="pillars-bg-video-container">
-            <img src="assets/scene2.jpg" alt="The AI Architect" class="bg-cover-image">
-            <!-- <video src="assets/scene2.mp4" muted loop playsinline class="pillars-video"></video> -->
-        </div>
-
-        <div class="container">
-            <div class="pillars-grid">
-                <div class="pillar-card" data-cursor="hover">
-                    <span class="pillar-num">01</span>
-                    <h3>Web Development</h3>
-                    <p>Selling high-converting, cinematic websites.</p>
+            <div class="about-details">
+                <div class="about-stat">
+                    <span class="stat-number" data-count="2">0</span>
+                    <span class="stat-label">Years Coding</span>
                 </div>
-                <div class="pillar-card" data-cursor="hover">
-                    <span class="pillar-num">02</span>
-                    <h3>AI Automation</h3>
-                    <p>Building custom AI agents to streamline businesses.</p>
+                <div class="about-stat">
+                    <span class="stat-number" data-count="5">0</span>
+                    <span class="stat-label">K+ Per Project</span>
                 </div>
-                <div class="pillar-card" data-cursor="hover">
-                    <span class="pillar-num">03</span>
-                    <h3>Prompt Engineering</h3>
-                    <p>Mastering AI communication and vibe coding.</p>
+                <div class="about-stat">
+                    <span class="stat-number" data-count="10">0</span>
+                    <span class="stat-label">Projects Built</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 5. Featured Work (Horizontal Scroll) -->
-    <section class="featured-work" id="work">
-        <div class="work-header container">
-            <h2 class="section-heading">THE STUDIO</h2>
-        </div>
-        
-        <div class="horizontal-scroll-wrapper">
-            <div class="horizontal-scroll-container">
-                <div class="project-item" data-cursor="hover">
-                    <div class="project-image" style="background-image: url('assets/scene3.jpg'); background-size: cover; background-position: center;"></div>
-                    <div class="project-title">AI Support Agent</div>
+    <!-- ============ SERVICES / PILLARS ============ -->
+    <section id="services">
+        <div class="services-inner">
+            <div class="services-label">
+                <span class="label-line"></span>
+                <span>WHAT I DO</span>
+            </div>
+            <div class="services-list">
+                <div class="service-item" data-magnetic>
+                    <div class="service-index">01</div>
+                    <div class="service-content">
+                        <h3>Web Development</h3>
+                        <p>Cinematic, high-converting websites that feel alive. Built from scratch, engineered for impact.</p>
+                    </div>
+                    <div class="service-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </div>
                 </div>
-                <div class="project-item" data-cursor="hover">
-                    <div class="project-image bg-orange"></div>
-                    <div class="project-title">E-Commerce App</div>
+                <div class="service-item" data-magnetic>
+                    <div class="service-index">02</div>
+                    <div class="service-content">
+                        <h3>AI Automation</h3>
+                        <p>Custom AI agents that think, act, and automate. Your business on autopilot.</p>
+                    </div>
+                    <div class="service-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </div>
                 </div>
-                <div class="project-item" data-cursor="hover">
-                    <div class="project-image bg-dark"></div>
-                    <div class="project-title">Trading Bot</div>
-                </div>
-                <div class="project-item" data-cursor="hover">
-                    <div class="project-image bg-gray"></div>
-                    <div class="project-title">Portfolio V1</div>
+                <div class="service-item" data-magnetic>
+                    <div class="service-index">03</div>
+                    <div class="service-content">
+                        <h3>Prompt Engineering</h3>
+                        <p>Mastering the language of AI. Precision prompts that unlock maximum intelligence from any model.</p>
+                    </div>
+                    <div class="service-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 6. Final CTA & Footer -->
-    <section class="cta">
-        <div class="container">
-            <h2 class="cta-title">READY TO AUTOMATE <br>YOUR BUSINESS?</h2>
-            <a href="mailto:HUSTLEBHAIYA@GMAIL.COM" class="btn-primary" data-cursor="hover">Let's Build Together</a>
+    <!-- ============ FEATURED WORK ============ -->
+    <section id="work">
+        <div class="work-inner">
+            <div class="work-header">
+                <div class="work-label">
+                    <span class="label-line"></span>
+                    <span>SELECTED WORK</span>
+                </div>
+                <h2 class="work-heading">THE STUDIO</h2>
+            </div>
+            <div class="work-gallery">
+                <div class="work-item" data-magnetic>
+                    <div class="work-item-image">
+                        <img src="assets/scene2.jpg" alt="AI Architect Project">
+                    </div>
+                    <div class="work-item-info">
+                        <h3>AI SUPPORT AGENT</h3>
+                        <span>AI AUTOMATION / 2026</span>
+                    </div>
+                </div>
+                <div class="work-item" data-magnetic>
+                    <div class="work-item-image">
+                        <img src="assets/scene3.jpg" alt="Web Project">
+                    </div>
+                    <div class="work-item-info">
+                        <h3>E-COMMERCE PLATFORM</h3>
+                        <span>WEB DEVELOPMENT / 2026</span>
+                    </div>
+                </div>
+                <div class="work-item" data-magnetic>
+                    <div class="work-item-image">
+                        <img src="assets/scene1.jpg" alt="Portfolio V1">
+                    </div>
+                    <div class="work-item-info">
+                        <h3>TRADING BOT</h3>
+                        <span>PYTHON / AI / 2025</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container footer-content">
-            <p>&copy; 2026 PRASHANT.</p>
-            <div class="social-links">
-                <a href="https://instagram.com/itz_hustle00" target="_blank" data-cursor="hover">Instagram</a>
-                <a href="mailto:HUSTLEBHAIYA@GMAIL.COM" data-cursor="hover">Email</a>
-                <a href="#" data-cursor="hover">GitHub</a>
+    <!-- ============ CTA SECTION ============ -->
+    <section id="cta">
+        <div class="cta-inner">
+            <h2 class="cta-heading">
+                <div class="line-wrap"><span class="line-inner">READY TO</span></div>
+                <div class="line-wrap"><span class="line-inner">BUILD THE</span></div>
+                <div class="line-wrap"><span class="line-inner"><em>FUTURE?</em></span></div>
+            </h2>
+            <a href="mailto:HUSTLEBHAIYA@GMAIL.COM" class="cta-button" data-magnetic>
+                <span class="cta-button-text">LET'S BUILD TOGETHER</span>
+                <span class="cta-button-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2"/></svg>
+                </span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-logo">PRASHANT<span class="dot">.</span></span>
+                    <p>Building the future, one line of code at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>CONNECT</h4>
+                        <a href="https://instagram.com/itz_hustle00" target="_blank" data-magnetic>Instagram</a>
+                        <a href="https://github.com/hustle-07" target="_blank" data-magnetic>GitHub</a>
+                        <a href="mailto:HUSTLEBHAIYA@GMAIL.COM" data-magnetic>Email</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>NAVIGATE</h4>
+                        <a href="#hero" data-magnetic>Home</a>
+                        <a href="#about" data-magnetic>About</a>
+                        <a href="#work" data-magnetic>Work</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PRASHANT. All rights reserved.</p>
+                <p class="footer-credit">Designed & Built with ♥</p>
             </div>
         </div>
     </footer>
