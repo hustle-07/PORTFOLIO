@@ -7,7 +7,7 @@ Disallow: /assets/scene2.jpg
 Disallow: /assets/scene3.jpg
 
 # Sitemap location
-Sitemap: https://hustle-07.github.io/PORTFOLIO/sitemap.xml
+Sitemap: https://hellobro.xyz/sitemap.xml
 
 # Crawl delay (be kind to servers)
 Crawl-delay: 10

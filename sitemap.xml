@@ -6,7 +6,7 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://hustle-07.github.io/PORTFOLIO/</loc>
+    <loc>https://hellobro.xyz/</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
   <!-- About Section -->
   <url>
-    <loc>https://hustle-07.github.io/PORTFOLIO/#about</loc>
+    <loc>https://hellobro.xyz/#about</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -22,7 +22,7 @@
 
   <!-- Services Section -->
   <url>
-    <loc>https://hustle-07.github.io/PORTFOLIO/#services</loc>
+    <loc>https://hellobro.xyz/#services</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -30,7 +30,7 @@
 
   <!-- Work Section -->
   <url>
-    <loc>https://hustle-07.github.io/PORTFOLIO/#work</loc>
+    <loc>https://hellobro.xyz/#work</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -38,7 +38,7 @@
 
   <!-- Contact -->
   <url>
-    <loc>https://hustle-07.github.io/PORTFOLIO/#cta</loc>
+    <loc>https://hellobro.xyz/#cta</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
